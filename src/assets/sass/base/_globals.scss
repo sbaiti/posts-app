@@ -1,0 +1,77 @@
+.spinner {
+  width: 60px;
+  height: 60px;
+  left: 48%;
+  top: 30%;
+  background-color: transparent;
+  position: absolute;
+  text-align: center;
+  animation: sk-rotate 2s infinite linear;
+  z-index: 10000;
+}
+
+.dot1 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: $primary;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 100%;
+  animation: sk-bounce 2s infinite ease-in-out;
+}
+
+.dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: $secondary;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 100%;
+  animation: sk-bounce 2s infinite ease-in-out;
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+@-webkit-keyframes sk-rotate {
+  100% {
+  }
+}
+
+@keyframes sk-rotate {
+  100% {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes sk-bounce {
+  0% {
+  }
+
+  100% {
+  }
+
+  50% {
+  }
+}
+
+@keyframes sk-bounce {
+  0% {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: scale(0);
+  }
+
+  100% {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: scale(0);
+  }
+
+  50% {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: scale(1);
+  }
+}
